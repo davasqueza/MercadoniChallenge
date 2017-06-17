@@ -12,7 +12,8 @@
 
     //Gmaps configurations
     uiGmapGoogleMapApiProvider.configure({
-      key: Google_API_Key
+      key: Google_API_Key,
+      libraries: "geometry"
     });
   }
 
