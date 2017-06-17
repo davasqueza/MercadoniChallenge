@@ -1,0 +1,10 @@
+<div layout="column" layout-fill ng-controller="MainController as MainCtrl">
+  <md-toolbar class="md-medium-tall" layout-align="center center" layout="row" md-whiteframe="5">
+    {{MainCtrl.mainTest}}
+  </md-toolbar>
+
+  <md-content flex id="mainContainer">
+    <md-content ng-view flex layout="column" class="ng-view-container"></md-content>
+    <md-toolbar></md-toolbar>
+  </md-content>
+</div>

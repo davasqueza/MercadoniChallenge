@@ -1,0 +1,3 @@
+.ng-view-container{
+  min-height: calc(100vh - 152px);
+}

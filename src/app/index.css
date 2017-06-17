@@ -1,0 +1,23 @@
+/*
+  fonts
+*/
+html {
+  font-family: 'Lato', serif;
+}
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/*
+  Toolbar
+*/
+
+.md-xl {
+  height: 200px;
+  min-height: 200px;
+  max-height: 200px;
+}
