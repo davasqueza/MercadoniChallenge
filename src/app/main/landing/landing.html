@@ -1,4 +1,9 @@
 <md-content>
   <ui-gmap-google-map center="vm.mapConfig.center" zoom="vm.mapConfig.zoom" control="vm.map">
+    <ui-gmap-marker
+      ng-repeat="marker in vm.locations"
+      coords="marker.coords"
+      idkey="marker.id"
+    ></ui-gmap-marker>
   </ui-gmap-google-map>
 </md-content>
