@@ -4,6 +4,8 @@
       ng-repeat="marker in vm.locations"
       coords="marker.coords"
       idkey="marker.id"
+      click="vm.markerClickHandler"
     ></ui-gmap-marker>
+    <ui-gmap-polyline ng-repeat="line in vm.userLines" path="line" geodesic='true'></ui-gmap-polyline>
   </ui-gmap-google-map>
 </md-content>

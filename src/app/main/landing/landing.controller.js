@@ -6,9 +6,13 @@
     .controller('LandingController', LandingController);
 
   /** @ngInject */
-  function LandingController(LandingService, _,$log, uiGmapGoogleMapApi) {
+  function LandingController(LandingService, _,$mdToast, $log, uiGmapGoogleMapApi) {
     var vm = this;
     vm.map = {};
+    vm.markerClickHandler = markerClickHandler;
+    vm.userLines = [];
+
+    var lineCoordinates = [];
 
     /*
     * initMap: Initialize basic map configuration
@@ -33,6 +37,13 @@
         })
         .catch(function (error) {
           $log.log("Error:", error);
+
+          $mdToast.show(
+            $mdToast.simple()
+              .textContent("Warning: unable to load directions list, please try later")
+              .hideDelay(3000)
+          );
+
         });
     }
 
@@ -46,7 +57,12 @@
           markersBoundingBox(locations);
         })
         .catch(function (error) {
-          $log.log("Error:", error);
+          $mdToast.log("Error:", error);
+          $mdToast.show(
+            $mdToast.simple()
+              .textContent("Warning: unable to geocode directions list, please try later")
+              .hideDelay(3000)
+          );
         });
     }
 
@@ -79,6 +95,17 @@
         });
         vm.map.getGMap().fitBounds(bounds);
       });
+    }
+
+    /*
+    * markerClickHandler: handler on event of marker click, used for draw lines between markers
+    * */
+    function markerClickHandler(event) {
+      lineCoordinates.push(event.getPosition());
+      if(lineCoordinates.length === 2){
+        vm.userLines.push(lineCoordinates);
+        lineCoordinates = [];
+      }
     }
 
     initMap();
