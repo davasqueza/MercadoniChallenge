@@ -8,6 +8,16 @@
   /** @ngInject */
   function LandingController() {
     var vm = this;
-    vm.test = "Working landing controller";
+
+    function initMap() {
+      vm.mapConfig = {
+        center: {
+          latitude: 45,
+          longitude: -73
+        }, zoom: 8
+      };
+    }
+
+    initMap();
   }
 })();

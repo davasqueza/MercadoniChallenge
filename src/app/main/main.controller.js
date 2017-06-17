@@ -8,6 +8,6 @@
   /** @ngInject */
   function MainController() {
     var vm = this;
-    vm.mainTest = "Working main controller";
+    vm.title = "Mercadoni Challenge";
   }
 })();

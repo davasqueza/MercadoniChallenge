@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('App', ['ngAnimate', 'ngResource', 'ngRoute', 'ngMaterial']);
+    .module('App', ['ngAnimate', 'ngResource', 'ngRoute', 'ngMaterial', 'uiGmapgoogle-maps']);
 
 })();
