@@ -32,7 +32,7 @@
           return {content: transformData};
         }
       }}),
-      geocode: $resource("https://maps.googleapis.com/maps/api/geocode/json", {key: Google_API_Key})
+      geocode: $resource("https://maps.googleapis.com/maps/api/geocode/json", {key: Google_API_Key, components: "administrative_area: Bogotá | country: CO"})
     };
 
     return service;
