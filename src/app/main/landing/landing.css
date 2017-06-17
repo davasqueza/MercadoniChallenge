@@ -1,3 +1,8 @@
 .angular-google-map-container {
   height: calc(100vh - 152px);
 }
+
+.unicorn-fab md-icon {
+  width: 40px;
+  height: 40px;
+}

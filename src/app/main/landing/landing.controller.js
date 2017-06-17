@@ -150,8 +150,8 @@
     * calculatePointsDistance: calculate the distance between two points
     * */
     function calculatePointsDistance(lineCoordinates) {
-      var startPoint = new google.maps.LatLng(lineCoordinates[0].lat(), lineCoordinates[0].lng());
-      var endPoint = new google.maps.LatLng(lineCoordinates[1].lat(), lineCoordinates[1].lng());
+      var startPoint = new googleMaps.LatLng(lineCoordinates[0].lat(), lineCoordinates[0].lng());
+      var endPoint = new googleMaps.LatLng(lineCoordinates[1].lat(), lineCoordinates[1].lng());
       var distance = googleMaps.geometry.spherical.computeDistanceBetween(startPoint, endPoint);
       return distance.toFixed(2);
     }
